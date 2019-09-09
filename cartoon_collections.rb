@@ -1,16 +1,69 @@
-def roll_call_dwarves# code an argument here
-  # Your code here
+# def roll_call_dwarves
+#   dwarves = ["Doc", "Dopey", "Bashful", "Grumpy", "Sneezy", "Sleepy", "Happy"]
+# end
+
+# def summon_captain_planet
+#   planeteer_calls = ["earth", "wind", "fire", "water", "heart"]
+# end
+
+# def long_planeteer_calls
+#   short_words = ["puff", "go", "two"]
+#   long_planeteer_calls(short_words)
+# end
+
+# def find_the_cheese
+#   assorted_words = ["two", "go", "industrious", "bop"]
+#   long_planeteer_calls(assorted_words)
+  
+#   cheese_types = ["cheddar", "gouda", "camembert"]
+# end
+
+
+dwarves = %w[
+  Doc
+  Dopey
+  Bashful
+  Grumpy
+  Sneezy
+  Sleepy
+  Happy
+]
+
+def roll_call_dwarves(dwarves)
+  dwarves.each_with_index do |dwarf, index|
+    puts "#{index + 1}. #{dwarf}"
+  end
 end
 
-def summon_captain_planet# code an argument here
-  # Your code here
+roll_call_dwarves(dwarves)
+
+
+
+planeteer_calls = %w[earth wind fire water heart]
+
+def summon_captain_planet(planeteer_calls)
+  planeteer_calls.map { |call| call.capitalize + '!' }
 end
 
-def long_planeteer_calls# code an argument here
-  # Your code here
+summon_captain_planet(planeteer_calls)
+
+
+
+def long_planeteer_calls(planeteer_calls)
+  planeteer_calls.any? { |call| call.length > 4 }
 end
 
-def find_the_cheese# code an argument here
-  # the array below is here to help
-  cheese_types = ["cheddar", "gouda", "camembert"]
+long_planeteer_calls(planeteer_calls)
+
+
+potentially_cheesy_items = %w[umbrella spinach cheddar helicopter]
+
+def find_the_cheese(potentially_cheesy_items)
+  cheeses = %w[gouda cheddar camembert]
+
+  potentially_cheesy_items.find do |maybe_cheese|
+    cheeses.include?(maybe_cheese)
+  end
 end
+
+find_the_cheese(potentially_cheesy_items)
